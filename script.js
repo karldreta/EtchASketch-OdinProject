@@ -13,7 +13,17 @@ for (let i = 1; i <= 256; i++) {
     // boxNum.classList.add('boxNum');   
     // box.appendChild(boxNum);
     
+    // Hovering
 
-
-    container.appendChild(box);  
+    container.appendChild(box);
 }
+
+// Hovering
+const boxes = document.querySelectorAll('.box');
+boxes.forEach(box => box.addEventListener('mouseenter', changeColor));
+
+function changeColor(event) {
+    const box = event.target;
+    box.style.backgroundColor = 'black';
+}
+
