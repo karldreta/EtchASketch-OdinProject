@@ -2,51 +2,24 @@
     box-sizing: border-box;
 }
 
-body, html {
-    border: 0;
-    display: flex;
-    justify-content: center;
-}
-
-body {
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column-reverse;
-
-}
-
-#button {
-    align-self: center;
-    width: fit-content;
-    padding: 10px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-}
 
 #container {
-    /* border: 1px solid black; */
+    box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
-    width: 480px;
-    height: auto;
+    width: 500px;
+    height: 500px;
     margin: 0;
     padding: 0;
+    border: 1px solid black;
 }
 
 .box {
-    border: 1px solid black;
-    width: 30px;
-    height: 30px;
     margin: 0;
     padding: 0;
-    flex-grow: 1;
-    flex-basis: auto;
+    cursor: auto;
 }
 
-
-
-.boxNum {
-    text-align: center;
-    font-size: 10px;
-    padding: 0;
+.box:hover {
+    cursor: crosshair;
 }

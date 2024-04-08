@@ -1,44 +1,55 @@
 const container = document.querySelector('#container');
 const body = document.querySelector('body');
 const button = document.createElement('button');
-button.textContent = "Choose number of squares"
+button.textContent = "Canvas Size"
 button.addEventListener('click', generateBoxes);
 button.id = 'button';
 body.appendChild(button);
 
 
-function generateBoxes() {
-    container.innerHTML = '';
-    let boxQuantity = parseInt(prompt("Maximum number of 100: ")**2);
 
-    boxQuantity = Math.min(boxQuantity, 10000);
+function generateBoxes() {
+    let input;
+
+    for (;;) { // Dormammu effect here (Infinite Loop)
+        input = parseInt(prompt("Enter a number between 1 and 100:"));
+
+        if (!isNaN(input) && input >= 1 && input <= 100) {
+            break;
+        } else {
+            alert("Please enter a number between 1 and 100.")
+        }
+    }
+    // Create the necessary formula to calculate the size of the boxes
+    const numBoxes = input**2;
+    const boxesPerRow = Math.sqrt(numBoxes);
+    const boxSize = 500 / boxesPerRow; // Also per column, where 500 is the container size
+
+    container.innerHTML = ''; // Restarts the container with every input
 
     // Initialize the boxes via loop
-    for (let i = 1; i <= boxQuantity; i++) {
+    for (let i = 1; i <= numBoxes; i++) {
 
-        const box = document.createElement('div');
-        const boxNum = document.createElement('p');
-    
-        box.classList.add('box');
-        box.id = 'box-' + i;
+    const box = document.createElement('div');
 
-    
-        boxNum.textContent = i;
-        boxNum.classList.add('boxNum');   
-        box.appendChild(boxNum);
-    
-        container.appendChild(box);
-    }
+    box.classList.add('box');
+    box.id = 'box-' + i;
+    box.style.width = boxSize + 'px';
+    box.style.height = boxSize + 'px';
+    // box.style.border = '1px solid black';
+    container.appendChild(box);
+}
 
-        // Hovering
+
+// Hovering
     const boxes = document.querySelectorAll('.box');
-
     boxes.forEach(box => box.addEventListener('mouseenter', changeColor));
 
     function changeColor(event) {
         const box = event.target;
         box.style.backgroundColor = 'black';
     }
+    
 }
 
 
