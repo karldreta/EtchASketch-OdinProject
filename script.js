@@ -1,10 +1,43 @@
-const container = document.querySelector('#container');
 const body = document.querySelector('body');
-const button = document.createElement('button');
-button.textContent = "Canvas Size"
-button.addEventListener('click', generateBoxes);
-button.id = 'button';
-body.appendChild(button);
+const container = document.querySelector('#container');
+const navBar = document.createElement('div')
+navBar.id = 'navBar';
+document.body.insertBefore(navBar, document.getElementById('container'));
+
+// Grid Button
+const gridButton = document.createElement('button');
+gridButton.id = 'gridButton';
+gridButton.classList.add('button')
+gridButton.textContent = "Number of Grid"
+gridButton.addEventListener('click', generateBoxes);
+navBar.appendChild(gridButton);
+
+// Random
+
+const randButton = document.createElement('button');
+randButton.id = 'randButton';
+randButton.classList.add('button')
+randButton.textContent = "Randomizer"
+randButton.addEventListener('click', toggleRandomizer);
+navBar.appendChild(randButton);
+
+// Gradient
+
+const gradientButton = document.createElement('button');
+gradientButton.id = 'gradientButton';
+gradientButton.classList.add('button')
+gradientButton.textContent = "Choose Gradient"
+// gradientButton.addEventListener('click', generateBoxes);
+navBar.appendChild(gradientButton);
+
+// Erase
+
+const eraseButton = document.createElement('button');
+eraseButton.id = 'eraseButton';
+eraseButton.classList.add('button')
+eraseButton.textContent = "Eraser"
+eraseButton.addEventListener('click', toggleEraser);
+navBar.appendChild(eraseButton);
 
 
 
@@ -38,18 +71,59 @@ function generateBoxes() {
     box.style.height = boxSize + 'px';
     // box.style.border = '1px solid black';
     container.appendChild(box);
-}
-
-
-// Hovering
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach(box => box.addEventListener('mouseenter', changeColor));
-
-    function changeColor(event) {
-        const box = event.target;
-        box.style.backgroundColor = 'black';
     }
-    
+
+    // Hovering
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => box.addEventListener('mouseenter', handleHover));
+
 }
 
 
+// Handling Hover Events
+
+// Toggle Eraser
+
+let isErase = false;
+
+function toggleEraser() {
+    isErase = !isErase;
+}
+
+// Toggle Randomizer
+
+let isRandom = true;
+
+function toggleRandomizer() {
+    isRandom = !isRandom;
+}
+
+// Hover Effects
+
+function handleHover(event) {
+    const box = event.target;
+
+    if (isErase) {
+        eraseContent(box);
+    } else if (isRandom){
+        randomContent(box);
+    } else {
+        colorContent(box);
+    }
+}
+
+function eraseContent(box) {
+    box.style.backgroundColor = '';
+}
+
+function randomContent(box) {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    let randomColor = `rgb(${red}, ${green}, ${blue})`;
+    box.style.backgroundColor = randomColor;  
+}
+
+function colorContent(box) {
+    box.style.backgroundColor = 'black';
+}
