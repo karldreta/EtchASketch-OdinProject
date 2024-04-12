@@ -22,6 +22,7 @@
 
 --- Adding elements to the DOM from inside the JS.
 --- Looping an x number of inputs.
+--- But the most important part is understanding Flexbox properties to align things evenly inside the container.
 --- Events and Hovering.
 --- Randomization of colors.
 
