@@ -10,6 +10,9 @@
 
 html {
     background-color: #FEF1F3;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 body {
