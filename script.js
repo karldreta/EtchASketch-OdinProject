@@ -8,7 +8,7 @@ document.body.insertBefore(navBar, document.getElementById('container'));
 const gridButton = document.createElement('button');
 gridButton.id = 'gridButton';
 gridButton.classList.add('button')
-gridButton.textContent = "Number of Grid"
+gridButton.innerHTML = '<i class="fa-solid fa-table-cells"></i>'
 gridButton.addEventListener('click', generateBoxes);
 navBar.appendChild(gridButton);
 
@@ -17,25 +17,16 @@ navBar.appendChild(gridButton);
 const randButton = document.createElement('button');
 randButton.id = 'randButton';
 randButton.classList.add('button')
-randButton.textContent = "Randomizer"
+randButton.innerHTML = '<i class="fa-solid fa-shuffle"></i>'
 randButton.addEventListener('click', toggleRandomizer);
 navBar.appendChild(randButton);
-
-// Gradient
-
-const gradientButton = document.createElement('button');
-gradientButton.id = 'gradientButton';
-gradientButton.classList.add('button')
-gradientButton.textContent = "Choose Gradient"
-// gradientButton.addEventListener('click', generateBoxes);
-navBar.appendChild(gradientButton);
 
 // Erase
 
 const eraseButton = document.createElement('button');
 eraseButton.id = 'eraseButton';
 eraseButton.classList.add('button')
-eraseButton.textContent = "Eraser"
+eraseButton.innerHTML = '<i class="fas fa-eraser"></i>';
 eraseButton.addEventListener('click', toggleEraser);
 navBar.appendChild(eraseButton);
 
@@ -45,7 +36,7 @@ function generateBoxes() {
     let input;
 
     for (;;) { // Dormammu effect here (Infinite Loop)
-        input = parseInt(prompt("Enter a number between 1 and 100:"));
+        input = parseInt(prompt("Enter number of Boxes from 1-100 (Input will be squared)"));
 
         if (!isNaN(input) && input >= 1 && input <= 100) {
             break;
@@ -69,7 +60,7 @@ function generateBoxes() {
     box.id = 'box-' + i;
     box.style.width = boxSize + 'px';
     box.style.height = boxSize + 'px';
-    // box.style.border = '1px solid black';
+    box.style.opacity = '0.1';
     container.appendChild(box);
     }
 
@@ -87,21 +78,37 @@ function generateBoxes() {
 let isErase = false;
 
 function toggleEraser() {
-    isErase = !isErase;
+    isErase = !isErase
+
+    if (isErase) {
+        eraseButton.classList.add('active');
+    } else {
+        eraseButton.classList.remove('active');
+    }
 }
 
 // Toggle Randomizer
 
-let isRandom = true;
+let isRandom = false;
 
 function toggleRandomizer() {
     isRandom = !isRandom;
+
+    if (isRandom) {
+        randButton.classList.add('active');
+    } else {
+        randButton.classList.remove('active');
+    }
 }
 
 // Hover Effects
 
 function handleHover(event) {
     const box = event.target;
+    let opacity = parseFloat(box.style.opacity);
+    opacity += 0.1;
+
+    box.style.opacity = opacity;
 
     if (isErase) {
         eraseContent(box);
