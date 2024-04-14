@@ -3,7 +3,7 @@
 ## 7 APR 2024
 
 
-## This is an Odin Project 
+### This is an Odin Project 
 
 ---- Had a lot of trouble along the way
 --- At some point I somehow scaled the container instead of the boxes, but I fixed it using a formula for determining the width and height of the inner boxes (I had to use some fundamental geometry for this).
@@ -14,7 +14,7 @@
 
 --- The title font at: https://fonts.google.com/
 
-## Aftermath
+### Aftermath
 
 --- I think I finished the project now, 5 days since I started it. It was fun building it. 
 
@@ -22,9 +22,10 @@
 
 --- Adding elements to the DOM from inside the JS.
 --- Looping an x number of inputs.
---- But the most important part is understanding Flexbox properties to align things evenly inside the container.
 --- Events and Hovering.
 --- Randomization of colors.
+
+# But the most important part is understanding Flexbox properties to align the boxes evenly inside the container.
 
 
 --- Also did the Extra Credits
