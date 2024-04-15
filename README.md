@@ -21,13 +21,18 @@
 --- I learned more about:
 
 --- Adding elements to the DOM from inside the JS.
+
 --- Looping an x number of inputs.
---- Events and Hovering.
+
+--- Events and Hovering. 
+
 --- Randomization of colors.
 
-# But the most important part is understanding Flexbox properties to align the boxes evenly inside the container.
+### But the most important part is understanding Flexbox properties to align the boxes evenly inside the container.
 
 
 --- Also did the Extra Credits
+
 --- I added some buttons to toggle
+
 --- I know how to style buttons now base on their toggle states.
