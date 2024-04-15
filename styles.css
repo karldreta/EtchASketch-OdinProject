@@ -78,8 +78,7 @@ span.largerText {
     margin: 0;
     padding: 0;
     margin-bottom: 40px;
-    /* border: 5px solid var(--border); */
-    border: 1px solid red;
+    border: 5px solid var(--border);
     border-radius: 10px;
 }
 
