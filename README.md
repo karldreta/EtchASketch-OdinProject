@@ -1,38 +1,34 @@
-# etch-a-sketch-proj
+# Etch-A-Sketch: Odin Project
 
 ## 7 APR 2024
 
 
 ### This is an Odin Project 
 
----- Had a lot of trouble along the way
---- At some point I somehow scaled the container instead of the boxes, but I fixed it using a formula for determining the width and height of the inner boxes (I had to use some fundamental geometry for this).
+* Had a lot of trouble along the way
+* At some point I somehow scaled the container instead of the boxes, but I fixed it using a formula for determining the width and height of the inner boxes (I had to use some fundamental geometry for this).
 
---- Had to go back to previous lessons for this, like the [JavaScript Mouse Events Tutorial](https://www.javascripttutorial.net/javascript-dom/javascript-mouse-events/), check it out.
+* Had to go back to previous lessons for this, like the [JavaScript Mouse Events Tutorial](https://www.javascripttutorial.net/javascript-dom/javascript-mouse-events/).
 
---- Got some awesome icons at: https://fontawesome.com/
+### Resources
 
---- The title font at: https://fonts.google.com/
+- **Icons:** [Font Awesome](https://fontawesome.com/)
+- **Fonts:** [Google Fonts](https://fonts.google.com/)
 
 ### Aftermath
 
---- I think I finished the project now, 5 days since I started it. It was fun building it. 
+- The project took about 5 days to complete, and I enjoyed the process of building it.
+- Key learnings include:
+  - Adding elements to the DOM with JavaScript.
+  - Looping through a number of inputs.
+  - Handling events and hover effects.
+  - Randomizing colors.
 
---- I learned more about:
+### Important Takeaway
 
---- Adding elements to the DOM from inside the JS.
+- Gained a solid understanding of Flexbox properties for aligning boxes evenly inside a container.
 
---- Looping an x number of inputs.
+### Extra Credits
 
---- Events and Hovering. 
-
---- Randomization of colors.
-
-### But the most important part is understanding Flexbox properties to align the boxes evenly inside the container.
-
-
---- Also did the Extra Credits
-
---- I added some buttons to toggle
-
---- I know how to style buttons now base on their toggle states.
+- Added buttons to toggle features on and off.
+- Learned how to style buttons based on their toggle states.
